@@ -1,5 +1,6 @@
 import React from 'react';
-
+import './App.css';
+import Button from 'react-bootstrap/Button';
 
 class Upload extends React.Component {
   constructor(props) {
@@ -78,7 +79,10 @@ class Upload extends React.Component {
   render() {
     return (
       <React.Fragment>
-      <div className="form-group">
+      <div className="navbar"></div>
+      <div className="logo"></div>
+      <Button href="/" type="button" className="butt">Home</Button>
+      <div className="form">
         <label for="picture">Attach a picture of yourself</label>
           <input 
               type="file" 
