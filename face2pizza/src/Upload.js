@@ -10,6 +10,17 @@ class Upload extends React.Component {
       success: false,
       picture: null,
       res: null,
+      tHappy: 'Bacon',
+      tSad: 'Extra Cheese',
+      tFear: 'Sausage',
+      tAnger: 'ChilliPepper',
+      tNeutral: 'Mushrooms',
+      tDisgust: 'Pineapple',
+      tSurprise: 'Anchovies',
+      tContempt: 'Spinach',
+      topping1: null,
+      topping2: null,
+      topping3: null,
     }
     this.fileChanged = this.fileChanged.bind(this);
   }
@@ -22,11 +33,11 @@ class Upload extends React.Component {
   }
 
   submitPicture = (event) => {
-    const fileType = this.state.picture['type'];
-    const validImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
-    if (validImageTypes.includes(fileType)) {
+    // const fileType = this.state.picture['type'];
+    // const validImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
+    // if (validImageTypes.includes(fileType)) {
 
-      this.state.success = true;
+    //   this.state.success = true;
 
       //'use strict';
 
@@ -41,6 +52,35 @@ class Upload extends React.Component {
       const uriBase = 'https://eastus.api.cognitive.microsoft.com/face/v1.0/detect';
 
       const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg';
+      // const image2 = 'https://cdn.newsapi.com.au/image/v1/d55a797470d890e2bdffc34d3885e6e8';
+      // const image3 = 'https://previews.123rf.com/images/bowie15/bowie151401/bowie15140100071/39843011-angry-face-man.jpg';
+
+      // const min = 1;
+      // const max = 3;
+      // const rand = min + Math.random() * (max - min);
+        this.setState = {
+          topping1: this.state.tHappy,
+          topping2: this.state.tNeutral,
+          topping3: this.state.tSurprise
+        };
+
+      // if(rand == 2){
+      //   this.setState = {
+      //     imageUrl: image2,
+      //     topping1: this.state.tSad,
+      //     topping2: this.state.tFear,
+      //     topping3: this.state.tContempt
+      //   };
+      // }
+      // if(rand == 3){
+      //   this.setState = {
+      //     imageUrl: image3,
+      //     topping1: this.state.tAnger,
+      //     topping2: this.state.tContempt,
+      //     topping3: this.state.tDisgust
+      //   };
+      // }
+
       // Request parameters.
       const params = {
         'returnFaceId': 'true',
@@ -51,7 +91,7 @@ class Upload extends React.Component {
       const options = {
         uri: uriBase,
         qs: params,
-        body: '{"url": ' + '"' + imageUrl + '"}',
+        body: '{"url": ' + '"' + this.state.imageUrl + '"}',
         headers: {
           'Content-Type': 'application/json',
           'Ocp-Apim-Subscription-Key': subscriptionKey
@@ -64,16 +104,10 @@ class Upload extends React.Component {
           return;
         }
         let jsonResponse = JSON.parse(body, null, '  ');
-        alert("parsed json")
+        //alert("parsed json")
         console.log('JSON Response\n');
         console.log(jsonResponse);
-
-        this.setState.res = {
-          happy: `${jsonResponse[0].faceAttributes.emotion.happiness}`,
-        };
-        console.log("Happy state: " + `${jsonResponse[0].faceAttributes.emotion.happiness}`)
       });
-    }
   }
   
   render() {
@@ -81,7 +115,7 @@ class Upload extends React.Component {
       <React.Fragment>
       <div className="navbar"></div>
       <div className="logo"></div>
-      <Button href="/" type="button" className="butt">Home</Button>
+      //<Button href="/" type="button" className="butt">Home</Button>
       <div className="form">
         <label for="picture">Attach a picture of yourself</label>
           <input 
@@ -89,9 +123,8 @@ class Upload extends React.Component {
               className="form-control-file" 
               id="picture"            
               onChange={this.fileChanged}
-              required
             />
-        <button className="btn btn-primary" onClick={this.submitPicture}>Upload!</button>
+        <Button href="/Pizza" type="button">Upload!</Button>
       </div>
       </React.Fragment>
     );
