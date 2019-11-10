@@ -115,7 +115,8 @@ class Upload extends React.Component {
       <React.Fragment>
       <div className="navbar"></div>
       <div className="logo"></div>
-      //<Button href="/" type="button" className="butt">Home</Button>
+      <div className="banner" ></div>
+      <Button href="/" type="button" className="butt">Home</Button>
       <div className="form">
         <label for="picture">Attach a picture of yourself</label>
           <input 

@@ -5,7 +5,8 @@ import './App.css';
 function Landing(props) {
   return (
     <div>
-      <div className="navbar"></div>
+      <div className="navbar" ></div>
+      <div className="banner" ></div>
       <div className="logo"></div>
       <div className="centerText1">
         Face Your Pizza
