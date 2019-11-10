@@ -39,7 +39,7 @@ class Upload extends React.Component {
       // westus, replace "westcentralus" in the URL below with "westus".
       const uriBase = 'https://eastus.api.cognitive.microsoft.com/face/v1.0/detect';
 
-      const imageUrl = 'https://cdn.newsapi.com.au/image/v1/d55a797470d890e2bdffc34d3885e6e8';
+      const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg';
       // Request parameters.
       const params = {
         'returnFaceId': 'true',
@@ -78,11 +78,11 @@ class Upload extends React.Component {
   render() {
     return (
       <React.Fragment>
-      <div class="form-group">
+      <div className="form-group">
         <label for="picture">Attach a picture of yourself</label>
           <input 
               type="file" 
-              class="form-control-file" 
+              className="form-control-file" 
               id="picture"            
               onChange={this.fileChanged}
               required
