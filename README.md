@@ -1,3 +1,2 @@
-# Give Me Space 
-Building a web application using React and DialogFlow to provide assistance to DACA recipients and to help raise awareness.
-
+# Face to pizza 
+Building a web application using React and Azure Facial recognition that determines the mood of the user and suggests the pizza they should eat according to their emotions. 
