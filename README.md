@@ -1,3 +1,3 @@
 # Face2Pizza 
 
-Building a web application using React and Azure Facial recognition that determines the mood of the user and suggests the pizza they should eat according to their emotions. 
+Face2Pizza is a web application built using React, Bootstrap, and Azure Facial recognition that determines the mood of the user and suggests pizza toppings based on their emotions.
